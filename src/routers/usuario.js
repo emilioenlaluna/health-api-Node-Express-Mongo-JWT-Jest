@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { createUser } = require("../controllers/usuario");
+const { crearUsuario } = require("../controllers/usuario");
 const { crearUsuarioSchema } = require("../validations/usuario");
 const validator = require("../middlewares/validator");
 
-router.post("/users", validator.body(crearUsuarioSchema), createUser);
+router.post("/usuario", validator.body(crearUsuarioSchema), crearUsuario);
+
 
 module.exports = router;

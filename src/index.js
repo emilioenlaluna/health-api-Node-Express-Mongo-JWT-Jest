@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 
-const userRouter = require("./routers/user");
+const userRouter = require("./routers/usuario");
 
 
 const validationError = require("./middlewares/validation-error");
