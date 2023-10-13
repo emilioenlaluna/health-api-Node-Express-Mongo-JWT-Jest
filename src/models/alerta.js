@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("./sequelize");
 
 module.exports = sequelize.define("Alerta", {
-    tituli: {
+    titulo: {
         type: DataTypes.STRING,
         allowNull: false,
       },

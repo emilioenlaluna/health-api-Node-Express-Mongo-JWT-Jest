@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("./sequelize");
 
-module.exports = sequelize.define("Metricas", {
+module.exports = sequelize.define("Metrica", {
     circunferenciaCintura: {
         type: DataTypes.FLOAT,
       },

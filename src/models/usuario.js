@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("./sequelize");
 
-module.exports = sequelize.define("Usuarios", {
+module.exports = sequelize.define("Usuario", {
 	username: {
 		type: DataTypes.STRING(100),
 		allowNull: false,
