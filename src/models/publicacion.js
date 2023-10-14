@@ -21,6 +21,9 @@ module.exports = sequelize.define("Publicacion", {
 		allowNull: false,
 		defaultValue: 0,
 	},
+	imagen: {
+        type: DataTypes.STRING,
+      },
 	isActive: {
 		field: "is_active",
 		type: DataTypes.BOOLEAN,

@@ -17,4 +17,22 @@ module.exports = sequelize.define("Metrica", {
       altura: {
         type: DataTypes.FLOAT,
       },
+      frecuenciaCardiaca: {
+        type: DataTypes.INTEGER,
+      },
+      temperaturaCorporal: {
+        type: DataTypes.FLOAT,
+      },
+      glucosaEnSangre: {
+        type: DataTypes.FLOAT,
+      },
+      colesterolHDL: {
+        type: DataTypes.FLOAT,
+      },
+      colesterolLDL: {
+        type: DataTypes.FLOAT,
+      },
+      frecuenciaRespiratoria: {
+        type: DataTypes.INTEGER,
+      },
 });

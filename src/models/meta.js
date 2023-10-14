@@ -14,4 +14,15 @@ module.exports = sequelize.define("Meta", {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      descripcionMeta: {
+        type: DataTypes.TEXT,
+      },
+      estadoMeta: {
+        type: DataTypes.STRING,
+      },
+      progreso: {
+        type: DataTypes.FLOAT,
+      },
+            
+      
 });

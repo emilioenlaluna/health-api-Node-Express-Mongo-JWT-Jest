@@ -10,4 +10,25 @@ module.exports = sequelize.define("Ejercicio", {
       descripcion: {
         type: DataTypes.TEXT,
       },
+      tipoDeEjercicio: {
+        type: DataTypes.STRING,
+      },
+      duracionEstimada: {
+        type: DataTypes.INTEGER,
+      },
+      grupoMuscularTrabajado: {
+        type: DataTypes.STRING,
+      },
+      nivelDeDificultad: {
+        type: DataTypes.INTEGER,
+      },
+      caloriasQuemadas: {
+        type: DataTypes.FLOAT,
+      },
+      imagenDelEjercicio: {
+        type: DataTypes.STRING,
+      },
+      imagen: {
+        type: DataTypes.STRING,
+      },
 });
