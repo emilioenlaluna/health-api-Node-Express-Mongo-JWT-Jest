@@ -14,4 +14,17 @@ module.exports = sequelize.define("Alerta", {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      imagen: {
+        type: DataTypes.STRING,
+      },
+	isActive: {
+		field: "is_active",
+		type: DataTypes.BOOLEAN,
+		allowNull: false,
+		defaultValue: true,
+	},
+	fechaCreacion: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
 });

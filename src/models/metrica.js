@@ -35,4 +35,5 @@ module.exports = sequelize.define("Metrica", {
       frecuenciaRespiratoria: {
         type: DataTypes.INTEGER,
       },
+      
 });
