@@ -1,16 +1,13 @@
 const Actividad = require("../models/actividad");
 
-exports.findAll = function () {
-	return Actividad.findAll();
-};
-
-exports.findByUser = function (usuarioId) {
+exports.findAll = function (usuarioId) {
 	return Actividad.findAll({
 		where: {
 			usuarioId,
 		},
 	});
 };
+
 
 exports.findById = function (id) {
 	return Actividad.findByPk(id);

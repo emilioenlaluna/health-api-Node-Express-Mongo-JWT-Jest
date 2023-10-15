@@ -1,19 +1,15 @@
 const Alerta = require("../models/alerta");
 
-exports.findAll = function () {
-	return Alerta.findAll();
-};
-
-exports.findById = function (id) {
-	return Alerta.findByPk(id);
-};
-
-exports.findByUser = function (usuarioId) {
+exports.findAll = function (usuarioId) {
 	return Alerta.findAll({
 		where: {
 			usuarioId,
 		},
 	});
+};
+
+exports.findById = function (id) {
+	return Alerta.findByPk(id);
 };
 
 

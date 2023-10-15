@@ -55,12 +55,6 @@ exports.initDatabase = async function () {
 	Comunidad.hasMany(Publicacion);
 	Publicacion.belongsTo(Comunidad);
 
-	
-
-
-
-
-
 
 	Usuario.hasMany(UsuarioComuniadad);
 	UsuarioComuniadad.belongsTo(Usuario);
