@@ -9,6 +9,15 @@ exports.findById = function (id) {
 	return Meta.findByPk(id);
 };
 
+
+exports.findByUser = function (userId) {
+	return Meta.findAll({
+		where: {
+			userId,
+		},
+	});
+};
+
 exports.insert = function (data) {
 	return Meta.create(data);
 };
@@ -25,3 +34,4 @@ exports.deleteById = async function (id) {
 	const post = await Meta.findByPk(id);
 	await post.destroy();
 };
+

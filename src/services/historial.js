@@ -9,6 +9,15 @@ exports.findById = function (id) {
 	return Historial.findByPk(id);
 };
 
+exports.findByUser = function (userId) {
+	return Historial.findAll({
+		where: {
+			userId,
+		},
+	});
+};
+
+
 exports.insert = function (data) {
 	return Historial.create(data);
 };

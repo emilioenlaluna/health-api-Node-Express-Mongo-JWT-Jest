@@ -9,6 +9,15 @@ exports.findById = function (id) {
 	return Dieta.findByPk(id);
 };
 
+exports.findByUser = function (userId) {
+	return Dieta.findAll({
+		where: {
+			userId,
+		},
+	});
+};
+
+
 exports.insert = function (data) {
 	return Dieta.create(data);
 };

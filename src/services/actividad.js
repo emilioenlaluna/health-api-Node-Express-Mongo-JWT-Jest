@@ -4,6 +4,14 @@ exports.findAll = function () {
 	return Actividad.findAll();
 };
 
+exports.findByUser = function (usuarioId) {
+	return Actividad.findAll({
+		where: {
+			usuarioId,
+		},
+	});
+};
+
 exports.findById = function (id) {
 	return Actividad.findByPk(id);
 };

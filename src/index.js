@@ -10,6 +10,7 @@ app.use(express.json());
 
 
 const userRouter = require("./routers/usuario");
+const authRouter = require("./routers/auth");
 
 
 const validationError = require("./middlewares/validation-error");
@@ -17,7 +18,8 @@ const unknownError = require("./middlewares/unknown-error");
 
 // Rutas
 
-app.use(userRouter);
+app.use("/usuarios",userRouter);
+app.use("/auth",authRouter);
 
 
 // Manejo de errores

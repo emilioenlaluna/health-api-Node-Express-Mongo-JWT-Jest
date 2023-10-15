@@ -20,6 +20,9 @@ exports.update = async function (id, data) {
 	});
 };
 
+
+
+
 exports.deleteById = async function (id) {
 	const post = await Comida.findByPk(id);
 	await post.destroy();

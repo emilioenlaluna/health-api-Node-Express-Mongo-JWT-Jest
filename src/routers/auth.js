@@ -4,6 +4,6 @@ const joiValidator = require("../middlewares/validator");
 const { loginSchema } = require("../validations/authSchema");
 const { login } = require("../controllers/auth");
 
-router.post("/login", joiValidator.body(loginSchema), login);
+router.post("/", joiValidator.body(loginSchema), login);
 
 module.exports = router;

@@ -8,6 +8,15 @@ exports.findById = function (id) {
 	return Alerta.findByPk(id);
 };
 
+exports.findByUser = function (usuarioId) {
+	return Alerta.findAll({
+		where: {
+			usuarioId,
+		},
+	});
+};
+
+
 exports.insert = function (data) {
 	return Alerta.create(data);
 };
