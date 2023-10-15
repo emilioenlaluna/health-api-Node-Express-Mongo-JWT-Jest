@@ -1,38 +1,38 @@
 const {
-	findAll,
-	findById,
-	insert,
-	deleteById,
-	update,
+    findAll,
+    findById,
+    insert,
+    update,
+    deleteById,
 } = require("../services/alerta");
 
 exports.listarAlertas = async function (request, response) {
-	const actividades = await findAll();
-	response.status(200).json(actividades);
+    const alertas = await findAll();
+    response.status(200).json(alertas);
 };
 
 exports.detalleAlerta = async function (request, response) {
-	const { id } = request.params;
-	const actividad = await findById(id);
-	response.status(200).json(actividad);
+    const { id } = request.params;
+    const alerta = await findById(id);
+    response.status(200).json(alerta);
 };
 
-exports.crearActividad = async function (request, response) {
-	const { duracion, caloriasQuemadas,fecha,estado,progreso} = request.body;
-	const actividad = await insert({  duracion, caloriasQuemadas,fecha,estado,progreso, usuarioId: request.user.id });
-	response.status(201).json(actividad);
+exports.crearAlerta = async function (request, response) {
+    const { titulo, contenido, fechaHora, imagen } = request.body;
+    const alerta = await insert({ titulo, contenido, fechaHora, imagen });
+    response.status(201).json(alerta);
 };
 
-exports.actualizarActividad = async function (request, response) {
-	const { duracion, caloriasQuemadas,fecha,estado,progreso } = request.body;
-	const { id } = request.params;
+exports.actualizarAlerta = async function (request, response) {
+    const { titulo, contenido, fechaHora, imagen } = request.body;
+    const { id } = request.params;
 
-	await update(id, { duracion, caloriasQuemadas,fecha,estado,progreso });
-	response.status(204).end();
+    await update(id, { titulo, contenido, fechaHora, imagen });
+    response.status(204).end();
 };
 
-exports.deletePost = async function (request, response) {
-	const { id } = request.params;
-	await deleteById(id);
-	response.status(204).end();
+exports.borrarAlerta = async function (request, response) {
+    const { id } = request.params;
+    await deleteById(id);
+    response.status(204).end();
 };

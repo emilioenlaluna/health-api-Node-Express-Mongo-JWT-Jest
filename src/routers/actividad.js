@@ -17,8 +17,8 @@ const {
 	actividadSchema,
 } = require("../validations/actividadSchema");
 
-router.get("/", listarActividades);
-router.get("/:id", validator.params(paramsSchema), detalleActividad);
+router.get("/", jwtValidator,listarActividades,);
+router.get("/:id", jwtValidator,validator.params(paramsSchema), detalleActividad);
 router.get("/usuario/:id", validator.params(paramsSchema), detalleActividadUsuario);
 router.post(
 	"/",

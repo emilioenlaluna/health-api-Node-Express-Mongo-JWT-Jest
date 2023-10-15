@@ -19,6 +19,7 @@ const ejercicioRouter=require("./routers/ejercicio");
 const historialRouter=require("./routers/historial");
 const metaRouter=require("./routers/meta");
 const metricaRouter=require("./routers/metrica");
+const publicacionRouter=require("./routers/publicacion");
 const userRouter = require("./routers/usuario");
 const userComunidadRouter = require("./routers/usuarioComunidad");
 
@@ -38,6 +39,7 @@ app.use("/ejercicio",ejercicioRouter);
 app.use("/historial",historialRouter);
 app.use("/meta",metaRouter);
 app.use("/metrica",metricaRouter);
+app.use("/publicacion",publicacionRouter);
 app.use("/usuarios",userRouter);
 app.use("/usuariocomunidad",userComunidadRouter);
 

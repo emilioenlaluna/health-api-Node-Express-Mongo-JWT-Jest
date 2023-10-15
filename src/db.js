@@ -17,7 +17,7 @@ const Metrica = require("./models/metrica");
 
 const Publicacion = require("./models/publicacion");
 const Usuario = require("./models/usuario");
-const UsuarioComuniadad = require("./models/usuarioComunidad");
+const UsuarioComunidad = require("./models/usuarioComunidad");
 
 exports.initDatabase = async function () {
 
@@ -56,11 +56,11 @@ exports.initDatabase = async function () {
 	Publicacion.belongsTo(Comunidad);
 
 
-	Usuario.hasMany(UsuarioComuniadad);
-	UsuarioComuniadad.belongsTo(Usuario);
+	Usuario.hasMany(UsuarioComunidad);
+	UsuarioComunidad.belongsTo(Usuario);
 
-	Comunidad.hasMany(UsuarioComuniadad);
-	UsuarioComuniadad.belongsTo(Comunidad);
+	Comunidad.hasMany(UsuarioComunidad);
+	UsuarioComunidad.belongsTo(Comunidad);
 
 	await connect();
 	await sync();
