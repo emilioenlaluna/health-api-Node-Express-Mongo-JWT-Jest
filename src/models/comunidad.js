@@ -14,6 +14,20 @@ module.exports = sequelize.define("Comunidad", {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      numeroMiembros: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      isActive: {
+        field: "is_active",
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
+      imagen: {
+        type: DataTypes.STRING,
+      },
      
 });
 

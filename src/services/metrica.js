@@ -21,6 +21,15 @@ exports.update = async function (id, data) {
 	});
 };
 
+
+exports.findByUser = function (userId) {
+	return Metrica.findAll({
+		where: {
+			userId,
+		},
+	});
+};
+
 exports.deleteById = async function (id) {
 	const post = await Metrica.findByPk(id);
 	await post.destroy();

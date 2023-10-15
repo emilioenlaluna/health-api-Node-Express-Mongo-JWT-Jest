@@ -28,5 +28,8 @@ module.exports = sequelize.define("Comida", {
       fibra: {
         type: DataTypes.FLOAT,
       },
+      imagen: {
+        type: DataTypes.STRING,
+      },
 });
 

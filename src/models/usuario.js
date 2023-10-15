@@ -13,7 +13,7 @@ module.exports = sequelize.define("Usuario", {
 		unique: true,
 	},
 	password: {
-		type: DataTypes.STRING(50),
+		type: DataTypes.STRING,
 		allowNull: false,
 		validate: {
 			len: [8, 50],
@@ -32,4 +32,4 @@ module.exports = sequelize.define("Usuario", {
 	  genero: {
 		type: DataTypes.STRING,
 	  },
-});
+},{ timestamps: true });

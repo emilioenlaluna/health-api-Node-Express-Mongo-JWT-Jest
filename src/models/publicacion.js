@@ -30,4 +30,8 @@ module.exports = sequelize.define("Publicacion", {
 		allowNull: false,
 		defaultValue: true,
 	},
+	fechaCreacion: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
 });

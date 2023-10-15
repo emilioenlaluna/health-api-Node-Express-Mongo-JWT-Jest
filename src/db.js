@@ -1,7 +1,9 @@
 const { connect, sync } = require("./models/sequelize");
+
+const Usuario = require("./models/usuario");
+const UsuarioComuniadad = require("./models/usuarioComunidad");
 /*
-const User = require("./models/user");
-const Post = require("./models/post");
+
 const Comment = require("./models/comment");
 
 // "Un usuario crea muchas publicaciones"
@@ -17,6 +19,10 @@ User.hasMany(Comment);
 Comment.belongsTo(User);
 */
 exports.initDatabase = async function () {
+
+	Usuario.hasMany(UsuarioComuniadad);
+	UsuarioComuniadad.belongsTo(Usuario);
+
 	await connect();
 	await sync();
 };
