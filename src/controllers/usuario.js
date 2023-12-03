@@ -6,3 +6,8 @@ exports.crearUsuario = async function (request, response) {
 	const user = await agregarUsuario({ email, username, password });
 	response.status(201).json(user);
 };
+
+exports.me = async function (request, response) {
+	const {username, email} = request.user;
+	response.status(200).json({username, email});
+};
