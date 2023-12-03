@@ -9,10 +9,10 @@ exports.findById = function (id) {
 	return Historial.findByPk(id);
 };
 
-exports.findByUser = function (userId) {
+exports.findByUser = function (usuarioId) {
 	return Historial.findAll({
 		where: {
-			userId,
+			usuarioId,
 		},
 	});
 };

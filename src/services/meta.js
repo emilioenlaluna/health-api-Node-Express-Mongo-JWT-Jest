@@ -10,10 +10,10 @@ exports.findById = function (id) {
 };
 
 
-exports.findByUser = function (userId) {
+exports.findByUser = function (usuarioId) {
 	return Meta.findAll({
 		where: {
-			userId,
+			usuarioId,
 		},
 	});
 };
