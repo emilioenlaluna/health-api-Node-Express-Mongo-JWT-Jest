@@ -4,11 +4,12 @@ const {
     insert,
     update,
     deleteById,
-    findByUser
+    findByUser,
+    findActive
 } = require("../services/comunidad");
 
 exports.listarComunidades = async function (request, response) {
-    const comunidades = await findAll();
+    const comunidades = await findActive();
     response.status(200).json(comunidades);
 };
 

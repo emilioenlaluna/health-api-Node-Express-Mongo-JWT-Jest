@@ -4,6 +4,14 @@ exports.findAll = function () {
 	return Comunidad.findAll();
 };
 
+exports.findActive = function () {
+	return Comunidad.findAll({
+		where: {
+			isActive: true,
+		},
+	});
+};
+
 exports.findById = function (id) {
 	return Comunidad.findByPk(id);
 };
