@@ -4,10 +4,16 @@ const {
     insert,
     update,
     deleteById,
+    findByUser
 } = require("../services/comunidad");
 
 exports.listarComunidades = async function (request, response) {
     const comunidades = await findAll();
+    response.status(200).json(comunidades);
+};
+
+exports.comunidadesUsuario = async function (request, response) {
+    const comunidades = await findByUser(request.user.id);
     response.status(200).json(comunidades);
 };
 
@@ -33,6 +39,7 @@ exports.crearComunidad = async function (request, response) {
         numeroMiembros,
         isActive,
         imagen,
+        UsuarioId: request.user.id,
     });
     response.status(201).json(comunidad);
 };

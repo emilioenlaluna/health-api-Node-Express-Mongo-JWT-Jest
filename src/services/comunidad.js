@@ -8,6 +8,14 @@ exports.findById = function (id) {
 	return Comunidad.findByPk(id);
 };
 
+exports.findByUser = function (usuarioId) {
+	return Comunidad.findAll({
+		where: {
+			usuarioId,
+		},
+	});
+};
+
 exports.insert = function (data) {
 	return Comunidad.create(data);
 };

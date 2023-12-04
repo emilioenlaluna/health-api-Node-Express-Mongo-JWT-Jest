@@ -40,8 +40,8 @@ exports.crearDieta = async function (request, response) {
         grasas,
         fibra,
         imagen,
+        UsuarioId: request.user.id,
     });
-    dieta.setUsuario(request.user.id);
     response.status(201).json(dieta);
 };
 

@@ -55,12 +55,17 @@ exports.initDatabase = async function () {
 	Comunidad.hasMany(Publicacion);
 	Publicacion.belongsTo(Comunidad);
 
+	Usuario.hasMany(Comunidad);
+	Comunidad.belongsTo(Usuario);
 
-	Usuario.hasMany(UsuarioComunidad);
-	UsuarioComunidad.belongsTo(Usuario);
+	Usuario.belongsToMany(Comunidad, { through: UsuarioComunidad });
+	Comunidad.belongsToMany(Usuario, { through: UsuarioComunidad });
 
-	Comunidad.hasMany(UsuarioComunidad);
-	UsuarioComunidad.belongsTo(Comunidad);
+	// Usuario.hasMany(UsuarioComunidad);
+	// UsuarioComunidad.belongsTo(Usuario);
+
+	// Comunidad.hasMany(UsuarioComunidad);
+	// UsuarioComunidad.belongsTo(Comunidad);
 
 	await connect();
 	await sync();
