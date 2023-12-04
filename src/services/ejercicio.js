@@ -13,6 +13,15 @@ exports.insert = function (data) {
 	return Ejercicio.create(data);
 };
 
+exports.findByUser = function (usuarioId) {
+	return Ejercicio.findAll({
+		where: {
+			usuarioId,
+		},
+	});
+};
+
+
 exports.update = async function (id, data) {
 	await Ejercicio.update(data, {
 		where: {

@@ -21,8 +21,10 @@ const UsuarioComunidad = require("./models/usuarioComunidad");
 
 exports.initDatabase = async function () {
 
-	Usuario.hasMany(Actividad);
-	Actividad.belongsTo(Usuario);
+	// Usuario.hasMany(Actividad);
+	// Actividad.belongsTo(Usuario);
+	Usuario.hasMany(Ejercicio);
+	Ejercicio.belongsTo(Usuario);
 
 	Ejercicio.hasMany(Actividad);
 	Actividad.belongsTo(Ejercicio);

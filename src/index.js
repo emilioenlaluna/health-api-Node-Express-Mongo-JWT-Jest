@@ -5,12 +5,14 @@ const cors = require("cors");
 initDatabase();
 
 const express = require("express");
+const handleEmptyProperties = require("./middlewares/handleEmptyProperties");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("../docs/swagger.json");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(handleEmptyProperties);
 
 const actividadRouter = require("./routers/actividad");
 const alertaRouter = require("./routers/alerta");
