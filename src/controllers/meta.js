@@ -4,10 +4,11 @@ const {
     insert,
     update,
     deleteById,
+    findByUser,
 } = require("../services/meta");
 
 exports.listarMetas = async function (request, response) {
-    const metas = await findAll();
+    const metas = await findByUser(request.user.id);
     response.status(200).json(metas);
 };
 
@@ -33,6 +34,7 @@ exports.crearMeta = async function (request, response) {
         descripcionMeta,
         estadoMeta,
         progreso,
+        UsuarioId: request.user.id,
     });
     response.status(201).json(meta);
 };
