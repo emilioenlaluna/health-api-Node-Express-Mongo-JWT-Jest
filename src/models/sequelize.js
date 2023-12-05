@@ -17,13 +17,13 @@ const {
 
 const sequelize =
 	process.env.NODE_ENV === "test"
-		? new Sequelize("sqlite::memory:")
+		? new Sequelize({
+			dialect: "sqlite",
+			storage: "./bedu-plus.db",
+		  })
 		: new Sequelize({
-				dialect: "mysql",
-				host: MYSQL_HOST,
-				username: MYSQL_USERNAME,
-				password: MYSQL_PASSWORD,
-				database: MYSQL_DATABASE,
+			dialect: "sqlite",
+			storage: "./bedu-plus.db",
 		  });
 
 exports.sequelize = sequelize;
