@@ -1,13 +1,14 @@
 const {
     findAll,
     findById,
+    findByUser,
     insert,
     update,
     deleteById,
 } = require("../services/historial");
 
 exports.listarHistoriales = async function (request, response) {
-    const historiales = await findAll();
+    const historiales = await findByUser(request.user.id);
     response.status(200).json(historiales);
 };
 
@@ -29,6 +30,7 @@ exports.crearHistorial = async function (request, response) {
         enfermedadesCronicas,
         cirugiasAnteriores,
         medicamentosTomados,
+        UsuarioId: request.user.id,
     });
     response.status(201).json(historial);
 };

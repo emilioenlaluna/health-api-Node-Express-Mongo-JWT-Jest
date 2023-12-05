@@ -9,10 +9,10 @@ exports.findById = function (id) {
 	return Dieta.findByPk(id);
 };
 
-exports.findByUser = function (userId) {
+exports.findByUser = function (usuarioId) {
 	return Dieta.findAll({
 		where: {
-			userId,
+			usuarioId,
 		},
 	});
 };

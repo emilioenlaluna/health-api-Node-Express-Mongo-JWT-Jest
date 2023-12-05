@@ -21,8 +21,10 @@ const UsuarioComunidad = require("./models/usuarioComunidad");
 
 exports.initDatabase = async function () {
 
-	Usuario.hasMany(Actividad);
-	Actividad.belongsTo(Usuario);
+	// Usuario.hasMany(Actividad);
+	// Actividad.belongsTo(Usuario);
+	Usuario.hasMany(Ejercicio);
+	Ejercicio.belongsTo(Usuario);
 
 	Ejercicio.hasMany(Actividad);
 	Actividad.belongsTo(Ejercicio);
@@ -55,12 +57,17 @@ exports.initDatabase = async function () {
 	Comunidad.hasMany(Publicacion);
 	Publicacion.belongsTo(Comunidad);
 
+	Usuario.hasMany(Comunidad);
+	Comunidad.belongsTo(Usuario, { as: "creador" });
 
-	Usuario.hasMany(UsuarioComunidad);
-	UsuarioComunidad.belongsTo(Usuario);
+	Usuario.belongsToMany(Comunidad, { as: "miembros", through: UsuarioComunidad });
+	Comunidad.belongsToMany(Usuario, { as: "comunidades", through: UsuarioComunidad });
 
-	Comunidad.hasMany(UsuarioComunidad);
-	UsuarioComunidad.belongsTo(Comunidad);
+	// Usuario.hasMany(UsuarioComunidad);
+	// UsuarioComunidad.belongsTo(Usuario);
+
+	// Comunidad.hasMany(UsuarioComunidad);
+	// UsuarioComunidad.belongsTo(Comunidad);
 
 	await connect();
 	await sync();

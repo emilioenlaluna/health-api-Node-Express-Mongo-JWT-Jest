@@ -22,10 +22,10 @@ exports.update = async function (id, data) {
 };
 
 
-exports.findByUser = function (userId) {
+exports.findByUser = function (usuarioId) {
 	return Metrica.findAll({
 		where: {
-			userId,
+			usuarioId,
 		},
 	});
 };

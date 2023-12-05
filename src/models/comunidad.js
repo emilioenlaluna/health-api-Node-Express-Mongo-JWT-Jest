@@ -12,6 +12,7 @@ module.exports = sequelize.define("Comunidad", {
 
     fechaCreacion: {
         type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
         allowNull: false,
       },
       numeroMiembros: {

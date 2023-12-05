@@ -8,11 +8,11 @@ const sequelize = new Sequelize({
 });*/
 
 const {
-	MYSQL_HOST,
-	MYSQL_DATABASE,
-	MYSQL_USERNAME,
-	MYSQL_PASSWORD,
-	FORCE_DB_UPDATE,
+  MYSQL_HOST,
+  MYSQL_DATABASE,
+  MYSQL_USERNAME,
+  MYSQL_PASSWORD,
+  FORCE_DB_UPDATE,
 } = process.env;
 
 const sequelize =
@@ -29,21 +29,21 @@ const sequelize =
 exports.sequelize = sequelize;
 
 exports.connect = async function () {
-	try {
-		await sequelize.authenticate();
-		console.log("> Conectado a la base de datos");
-	} catch (e) {
-		console.error("> No se puede conectar a la base de datos");
-		console.error(e);
-	}
+  try {
+    await sequelize.authenticate();
+    console.log("> Conectado a la base de datos");
+  } catch (e) {
+    console.error("> No se puede conectar a la base de datos");
+    console.error(e);
+  }
 };
 
 exports.sync = async function () {
-	try {
-		await sequelize.sync({ force: FORCE_DB_UPDATE === "yes" });
-		console.log("> Base de datos actualizada");
-	} catch (e) {
-		console.error("> no se puede actualizar la base de datos");
-		console.error(e);
-	}
+  try {
+    await sequelize.sync({ force: FORCE_DB_UPDATE === "yes" });
+    console.log("> Base de datos actualizada");
+  } catch (e) {
+    console.error("> no se puede actualizar la base de datos");
+    console.error(e);
+  }
 };

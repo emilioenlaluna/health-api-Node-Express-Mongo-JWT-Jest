@@ -1,5 +1,6 @@
 const {
     findAll,
+    findByUser,
     findById,
     insert,
     update,
@@ -7,7 +8,7 @@ const {
 } = require("../services/dieta");
 
 exports.listarDietas = async function (request, response) {
-    const dietas = await findAll();
+    const dietas = await findByUser(request.user.id);
     response.status(200).json(dietas);
 };
 
@@ -39,6 +40,7 @@ exports.crearDieta = async function (request, response) {
         grasas,
         fibra,
         imagen,
+        UsuarioId: request.user.id,
     });
     response.status(201).json(dieta);
 };

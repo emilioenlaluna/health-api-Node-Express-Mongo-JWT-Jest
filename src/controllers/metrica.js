@@ -4,10 +4,11 @@ const {
     insert,
     update,
     deleteById,
+    findByUser,
 } = require("../services/metrica");
 
 exports.listarMetricas = async function (request, response) {
-    const metricas = await findAll();
+    const metricas = await findByUser(request.user.id);
     response.status(200).json(metricas);
 };
 
@@ -43,6 +44,7 @@ exports.crearMetrica = async function (request, response) {
         colesterolHDL,
         colesterolLDL,
         frecuenciaRespiratoria,
+        UsuarioId: request.user.id,
     });
     response.status(201).json(metrica);
 };
