@@ -1,4 +1,5 @@
 const Comunidad = require("../models/comunidad");
+const Usuario = require("../models/usuario");
 
 exports.findAll = function () {
 	return Comunidad.findAll();
@@ -9,6 +10,11 @@ exports.findActive = function () {
 		where: {
 			isActive: true,
 		},
+		include: {
+			model: Usuario,
+			as: "creador",
+			attributes: ["username"],
+		}
 	});
 };
 
@@ -16,10 +22,10 @@ exports.findById = function (id) {
 	return Comunidad.findByPk(id);
 };
 
-exports.findByUser = function (usuarioId) {
+exports.findByUser = function (creadorId) {
 	return Comunidad.findAll({
 		where: {
-			usuarioId,
+			creadorId,
 		},
 	});
 };

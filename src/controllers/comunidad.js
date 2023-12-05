@@ -40,7 +40,7 @@ exports.crearComunidad = async function (request, response) {
         numeroMiembros,
         isActive,
         imagen,
-        UsuarioId: request.user.id,
+        creadorId: request.user.id,
     });
     response.status(201).json(comunidad);
 };
